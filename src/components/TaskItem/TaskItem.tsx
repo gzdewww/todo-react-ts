@@ -4,7 +4,7 @@ import type { Task } from "../../types/task";
 import Button from "../../UI/Button/Button";
 import Input from "../../UI/Input/Input";
 
-import styles from "./TaskItem.module.scss";
+import style from "./TaskItem.module.scss";
 
 interface TaskItemProps {
   task: Task;
@@ -21,21 +21,21 @@ export default function TaskItem({
 }: TaskItemProps) {
   return (
     <li
-      className={`${styles["list-item"]} ${
-        task.done ? styles["list-item--done"] : ""
+      className={`${style["list-item"]} ${
+        task.done ? style["list-item--done"] : ""
       }`}
     >
-      <Button className={styles["list-item__filter"]} onClick={toggleTask}>
+      <Button className={style["list-item__filter"]} onClick={toggleTask}>
         <BsFilter />
       </Button>
       <input
-        className={styles["list-item__checkbox"]}
+        className={style["list-item__checkbox"]}
         type="checkbox"
         checked={task.done}
         onChange={toggleTask}
       />
       <Input
-        className={styles["list-item__input"]}
+        className={style["list-item__input"]}
         value={task.value}
         onChange={(event) => {
           console.log(event.target.value);
@@ -44,7 +44,7 @@ export default function TaskItem({
         disabled={task.done}
       />
       <Button
-        className={styles["list-item__delete"]}
+        className={style["list-item__delete"]}
         onClick={removeTask}
         aria-label="Удалить задачу"
       >

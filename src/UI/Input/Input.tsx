@@ -1,4 +1,4 @@
-import styles from "./Input.module.scss";
+import style from "./Input.module.scss";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
@@ -23,8 +23,8 @@ export default function Input({
       onChange={onChange}
       placeholder={error || placeholder}
       aria-invalid={Boolean(error)}
-      className={`${styles.input} ${
-        error ? styles["input--error"] : ""
+      className={`${style.input} ${
+        error ? style["input--error"] : ""
       } ${className}`}
       {...props}
     />

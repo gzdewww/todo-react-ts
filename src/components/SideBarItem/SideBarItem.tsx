@@ -1,7 +1,7 @@
 import { BsJournal, BsJournalCheck, BsXLg } from "react-icons/bs";
-import styles from "./SideBarItem.module.scss";
-import Input from "../../UI/Input/Input";
 import Button from "../../UI/Button/Button";
+import Input from "../../UI/Input/Input";
+import style from "./SideBarItem.module.scss";
 
 interface SideBarItemProps {
   value: string;
@@ -24,23 +24,23 @@ export default function SideBarItem({
     <li
       tabIndex={0}
       className={
-        styles["list-item"] + " " + styles[active ? "list-item--active" : ""]
+        style["list-item"] + " " + style[active ? "list-item--active" : ""]
       }
       onClick={onClick}
     >
       {done ? (
-        <BsJournalCheck className={styles["list-item__icon"]} />
+        <BsJournalCheck className={style["list-item__icon"]} />
       ) : (
-        <BsJournal className={styles["list-item__icon"]} />
+        <BsJournal className={style["list-item__icon"]} />
       )}
 
       <Input
-        className={styles["list-item__input"]}
+        className={style["list-item__input"]}
         value={value}
         onChange={(event) => onChange(event.target.value)}
         disabled={!active}
       />
-      <Button className={styles["list-item__delete"]} onClick={onRemove}>
+      <Button className={style["list-item__delete"]} onClick={onRemove}>
         <BsXLg />
       </Button>
     </li>

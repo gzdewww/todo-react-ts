@@ -1,10 +1,9 @@
 import { BsPlusLg } from "react-icons/bs";
 
-import { useRef, useState } from "react";
 import type { List } from "../../types/list";
 import Button from "../../UI/Button/Button";
 import SideBarItem from "../SideBarItem/SideBarItem";
-import styles from "./SideBar.module.scss";
+import style from "./SideBar.module.scss";
 
 interface SideBarProps {
   lists: List[];
@@ -23,13 +22,11 @@ function SideBar({
   removeList,
   updateList,
 }: SideBarProps) {
-  const [expanded, setExpanded] = useState<boolean>(false);
-  const accordion = useRef<HTMLDivElement>(null);
 
   return (
-    <aside className={styles.sidebar}>
-      <div className={styles.sidebar__content}>
-        <ul className={styles.lists}>
+    <aside className={style.sidebar}>
+      <div className={style.sidebar__content}>
+        <ul className={style.lists}>
           {lists.map((list) => (
             <SideBarItem
               key={list.id}
@@ -50,10 +47,10 @@ function SideBar({
         </ul>
         <Button
           aria-label="Добавить список"
-          className={styles["sidebar__button-add"]}
+          className={style["sidebar__button-add"]}
           onClick={() => addList("Новый список")}
         >
-          <BsPlusLg className={styles["button-add__icon"]} />
+          <BsPlusLg className={style["button-add__icon"]} />
         </Button>
       </div>
     </aside>

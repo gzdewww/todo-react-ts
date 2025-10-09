@@ -1,5 +1,5 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
-import styles from "./Button.module.scss";
+import style from "./Button.module.scss";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
@@ -18,7 +18,7 @@ export default function Button({
       type="button"
       role="button"
       onClick={onClick}
-      className={`${styles.button} ${className ? className : ""}`}
+      className={`${style.button} ${className ? className : ""}`}
       {...props}
     >
       {children}

@@ -12,7 +12,7 @@
   scrollbar-color: var(--color-main) var(--bg-main);
   padding: 1rem;
 
-  &__empty{
+  &__empty {
     position: absolute;
     top: 1rem;
     left: 0;
@@ -20,21 +20,23 @@
     display: flex;
     place-items: center;
     gap: 1rem;
-    &-text{
+    &-text {
       display: inline;
       margin: 0;
     }
-    &-icon{
+    &-icon {
       animation: arrow 500ms ease-in-out infinite;
     }
   }
 }
 
 @keyframes arrow {
-  from, to {
+  from,
+  to {
     transform: translateX(0);
   }
-  35%,65% {
-    transform: translateX(.5rem);
+  35%,
+  65% {
+    transform: translateX(0.5rem);
   }
 }

@@ -6,13 +6,13 @@ import TaskList from "./components/TaskList/TaskList";
 import useTasks from "./hooks/useTasks";
 
 import { useMemo } from "react";
+import { BsCaretLeft } from "react-icons/bs";
 import Guide from "./components/Guide/Guide";
 import { useFilter } from "./hooks/useFilter";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 import type { Filter } from "./types/filter";
 import type { Task } from "./types/task";
 import Select from "./UI/Select/Select";
-import { useLocalStorage } from "./hooks/useLocalStorage";
-import { BsCaretLeft } from "react-icons/bs";
 
 function App() {
   const {
@@ -86,7 +86,7 @@ function App() {
       <main className="content">
         {activeList === "" ? (
           <div className="content__empty">
-            <BsCaretLeft className="content__empty-icon"/>
+            <BsCaretLeft className="content__empty-icon" />
             <p className="content__empty-text">Создайте новый список</p>
           </div>
         ) : (

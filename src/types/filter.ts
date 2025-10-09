@@ -1,4 +1,3 @@
-
 export interface Filter<T> {
   value: string;
   label: string;
