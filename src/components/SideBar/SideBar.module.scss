@@ -1,0 +1,12 @@
+.sidebar{
+  height: 100dvh;
+  padding: 1rem;
+  box-shadow: var(--box-shadow);
+  &__button-add{
+    font-size: 1.5rem;
+    padding: 1rem;
+    background-color: var(--bg-main-accent);
+    width: 100%;
+    justify-content: center;
+  }
+}

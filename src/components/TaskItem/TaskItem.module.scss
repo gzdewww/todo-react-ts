@@ -1,0 +1,68 @@
+.list-item {
+  background-color: var(--bg-main-accent);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--border-radius);
+  padding: 1rem 1.5rem;
+  transition: var(--transition-fast);
+
+  &__checkbox {
+    cursor: pointer;
+    aspect-ratio: 1/1;
+    position: relative;
+    appearance: none;
+    width: 2rem;
+    height: 2rem;
+    border: solid var(--accent-primary) 2px;
+    transition: filter var(--transition-fast);
+    border-radius: 25%;
+    outline: none;
+
+    &:hover,
+    &:focus-visible {
+      filter: drop-shadow(var(--glow-main));
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      font-weight: bold;
+      position: absolute;
+      text-align: center;
+      background: var(--accent-primary);
+      top: 15%;
+      left: 15%;
+      width: 70%;
+      height: 70%;
+      transition: var(--transition-fast);
+      transform: scale(0);
+      border-radius: 25%;
+    }
+
+    &:checked::after {
+      transform: scale(1);
+    }
+  }
+
+  &__input:disabled{
+    text-decoration: line-through;
+    color: var(--color-secondary);
+  }
+
+  &__filter,
+  &__delete {
+    color: var(--accent-color);
+    font-size: 2rem;
+    transition: var(--transition-fast);
+  }
+
+  &__filter:hover,
+  &__delete:hover,
+  &__filter:focus-visible,
+  &__delete:focus-visible {
+    filter: drop-shadow(var(--glow-main));
+    outline: none;
+  }
+}

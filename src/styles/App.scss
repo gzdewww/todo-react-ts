@@ -1,0 +1,40 @@
+#root {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  width: 100%;
+  text-align: center;
+}
+
+.content {
+  position: relative;
+  max-height: 100dvh;
+  overflow-y: auto;
+  scrollbar-color: var(--color-main) var(--bg-main);
+  padding: 1rem;
+
+  &__empty{
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    font-size: 3rem;
+    display: flex;
+    place-items: center;
+    gap: 1rem;
+    &-text{
+      display: inline;
+      margin: 0;
+    }
+    &-icon{
+      animation: arrow 500ms ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes arrow {
+  from, to {
+    transform: translateX(0);
+  }
+  35%,65% {
+    transform: translateX(.5rem);
+  }
+}

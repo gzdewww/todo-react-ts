@@ -1,0 +1,79 @@
+@import "./fonts.scss";
+
+:root {
+  font-family: "Lato", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* === Base === */
+  --bg-main: #1e1f22;
+  --bg-main-accent: #2a2b2f;
+  --bg-main-accent-hover: #32343a;
+
+  --color-main: #f3f4f6;
+  --color-secondary: #b3b5bb;
+
+  /* === Accents === */
+  --accent-primary: #3cb8f0;
+  --accent-primary-hover: #4fc9ff;
+  --accent-primary-muted: #276d8e;
+
+  --accent-danger: #e25555;
+  --accent-danger-hover: #ff6666;
+
+  --accent-success: #4caf7d;
+  --accent-warning: #f5a623;
+
+  /* === Effects === */
+  --border-color: #3c3d42;
+  --box-shadow: 0 0 1rem #00000066;
+  --glow-main: 0 0 0.3rem var(--accent-primary);
+  --border-radius: 1rem;
+  --border-radius-sm: 0.5rem;
+
+  /* === Transitions === */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-medium: 0.3s ease-in-out;
+
+  /* === Layout === */
+  --sidebar-width: 25rem;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-main);
+  color: var(--color-main);
+  min-width: 320px;
+  min-height: 100vh;
+  * {
+    box-sizing: border-box;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style: none;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* === Base (светлая тема) === */
+    --bg-main: #f7f8fa;
+    --bg-main-accent: #e9eaed;
+    --bg-main-accent-hover: #dee0e4;
+
+    --color-main: #1e1f22;
+    --color-secondary: #55575d;
+
+    /* === Accents (усиленные для контраста) === */
+    --accent-primary: #1786b8;
+    --accent-primary-hover: #0d74a3;
+    --accent-primary-muted: #276d8e;
+  }
+}

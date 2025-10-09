@@ -1,0 +1,23 @@
+.list-item {
+  font-size: 1.2rem;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  border-radius: var(--border-radius-sm);
+
+  &--active {
+    background-color: var(--bg-main-accent);
+  }
+
+  &__icon {
+    font-size: 2rem;
+  }
+}
