@@ -9,7 +9,11 @@
   user-select: none;
 
   transition: border-radius var(--transition-fast),
-    filter var(--transition-fast);
+    filter var(--transition-fast), background-color var(--transition-fast);
+
+  &:hover {
+    background-color: var(--bg-main-accent-hover);
+  }
 
   &--expanded {
     border-radius: var(--border-radius) var(--border-radius) 0 0;

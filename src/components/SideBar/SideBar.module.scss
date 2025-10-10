@@ -8,8 +8,11 @@
     background-color: var(--bg-main-accent);
     width: 100%;
     justify-content: center;
+    &:hover {
+      background-color: var(--bg-main-accent-hover);
+    }
   }
-  &__close{
+  &__close {
     display: none;
     position: fixed;
     font-size: 1.5rem;
@@ -19,6 +22,9 @@
     color: var(--bg-main);
     background-color: var(--accent-primary);
     transition: transform var(--transition-fast);
+    &:hover {
+      background-color: var(--accent-primary-hover);
+    }
   }
 }
 
@@ -31,13 +37,13 @@
     padding-top: 5.5rem;
     transform: translateX(-100vw);
     transition: transform var(--transition-fast);
-    &__close{
+    &__close {
       display: flex;
       transform: translateX(100vw);
     }
-    &--expanded{
+    &--expanded {
       transform: translateX(0);
-      & .sidebar__close{
+      & .sidebar__close {
         transform: translateX(0);
       }
     }

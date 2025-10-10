@@ -6,7 +6,11 @@
   justify-content: space-between;
   border-radius: var(--border-radius);
   padding: 1rem 1.5rem;
-  transition: var(--transition-fast);
+  transition: background-color var(--transition-fast);
+
+  &:hover {
+    background-color: var(--bg-main-accent-hover);
+  }
 
   &__checkbox {
     cursor: pointer;
@@ -18,7 +22,6 @@
     border: solid var(--accent-primary) 2px;
     transition: filter var(--transition-fast);
     border-radius: 25%;
-    outline: none;
 
     &:hover,
     &:focus-visible {
@@ -28,7 +31,6 @@
     &::after {
       content: "";
       display: inline-block;
-      font-weight: bold;
       position: absolute;
       text-align: center;
       background: var(--accent-primary);
@@ -46,23 +48,19 @@
     }
   }
 
-  &__input:disabled{
+  &__input:disabled {
     text-decoration: line-through;
     color: var(--color-secondary);
   }
 
-  &__filter,
   &__delete {
     color: var(--accent-color);
-    font-size: 2rem;
+    font-size: 1.5rem;
     transition: var(--transition-fast);
   }
 
-  &__filter:hover,
   &__delete:hover,
-  &__filter:focus-visible,
   &__delete:focus-visible {
     filter: drop-shadow(var(--glow-main));
-    outline: none;
   }
 }

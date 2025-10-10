@@ -13,11 +13,21 @@
 
   border-radius: var(--border-radius-sm);
 
+  transition: background-color var(--transition-fast);
+
   &--active {
     background-color: var(--bg-main-accent);
   }
 
   &__icon {
     font-size: 2rem;
+  }
+
+  &__delete{
+    font-size: 1.5rem;
+  }
+
+  &:hover {
+    background-color: var(--bg-main-accent-hover);
   }
 }
