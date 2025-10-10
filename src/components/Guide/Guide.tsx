@@ -42,10 +42,10 @@ const steps: step[] = [
       100% 0,
       100% 100%,
       0% 100%,
-      0% 10.5rem,
-      var(--sidebar-width) 10.5rem,
-      var(--sidebar-width) 5.5rem,
-      0 5.5rem
+      0% 10rem,
+      var(--sidebar-width) 10rem,
+      var(--sidebar-width) 5rem,
+      0 5rem
     )`,
     },
   },
