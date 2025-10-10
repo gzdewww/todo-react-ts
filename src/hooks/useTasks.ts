@@ -9,11 +9,6 @@ export default function useTasks() {
   const [lists, setLists] = useLocalStorage<List[]>("lists", []);
   const [activeList, setActiveList] = useLocalStorage<string>("activeList", "");
 
-  useEffect(() => {
-    if (lists.length && !activeList) {
-      setActiveList(lists[lists.length - 1].id);
-    }
-  }, [lists]);
   // LISTS CRUD
 
   const addList = useCallback(
@@ -34,12 +29,16 @@ export default function useTasks() {
   const removeList = useCallback(
     (listId: string) => {
       setLists((prev) => {
-        const nextActiveList =
-          prev[prev.findIndex((item) => item.id === listId) - 1]?.id ??
-          prev[1]?.id ??
-          "";
+        const index = prev.findIndex((list) => list.id === listId);
         const updated = prev.filter((list) => list.id !== listId);
-        setActiveList(updated.length > 0 ? nextActiveList : "");
+
+        if (updated.length === 0) {
+          setActiveList("");
+          return updated;
+        }
+
+        const next = updated[index] ?? updated[index - 1] ?? updated[0];
+        setActiveList(next.id);
 
         return updated;
       });
