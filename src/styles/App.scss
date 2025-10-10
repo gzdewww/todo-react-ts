@@ -26,6 +26,9 @@
     }
     &-icon {
       animation: arrow 500ms ease-in-out infinite;
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
     }
   }
 }
@@ -38,5 +41,14 @@
   35%,
   65% {
     transform: translateX(0.5rem);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #root {
+    grid-template-columns: 1fr;
+  }
+  .content {
+    padding-top: 5.5rem;
   }
 }

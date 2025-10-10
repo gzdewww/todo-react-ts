@@ -35,12 +35,17 @@ export default function SideBarItem({
       )}
 
       <Input
+        aria-label={`Изменить название списка "${value}"`}
         className={style["list-item__input"]}
         value={value}
         onChange={(event) => onChange(event.target.value)}
         disabled={!active}
       />
-      <Button className={style["list-item__delete"]} onClick={onRemove}>
+      <Button
+        aria-label={`Удалить список "${value}"`}
+        className={style["list-item__delete"]}
+        onClick={onRemove}
+      >
         <BsXLg />
       </Button>
     </li>

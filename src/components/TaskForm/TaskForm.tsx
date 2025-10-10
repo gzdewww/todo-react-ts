@@ -28,6 +28,8 @@ export default function TaskForm({ addTask }: TaskFromProps) {
   return (
     <form className={style["task-form"]} onSubmit={handleSubmit}>
       <Input
+        aria-label="Текст новой задачи"
+        aria-invalid={Boolean(error)}
         className={style["task-form__input"]}
         onChange={(event) => {
           setInputValue(event.target.value);
@@ -37,7 +39,11 @@ export default function TaskForm({ addTask }: TaskFromProps) {
         value={inputValue}
         error={error}
       />
-      <Button className={style["task-form__button"]} type="submit">
+      <Button
+        aria-label={`Добавить задачу "${inputValue}"`}
+        className={style["task-form__button"]}
+        type="submit"
+      >
         <BsPlusLg />
       </Button>
     </form>

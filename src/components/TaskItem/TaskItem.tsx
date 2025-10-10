@@ -1,4 +1,4 @@
-import { BsFilter, BsXLg } from "react-icons/bs";
+import { BsXLg } from "react-icons/bs";
 import type { Task } from "../../types/task";
 
 import Button from "../../UI/Button/Button";
@@ -25,16 +25,19 @@ export default function TaskItem({
         task.done ? style["list-item--done"] : ""
       }`}
     >
-      <Button className={style["list-item__filter"]} onClick={toggleTask}>
-        <BsFilter />
-      </Button>
       <input
+        aria-label={`${
+          task.done
+            ? "Отметить задачу как незавершённую"
+            : "Отметить задачу как завершённую"
+        }`}
         className={style["list-item__checkbox"]}
         type="checkbox"
         checked={task.done}
         onChange={toggleTask}
       />
       <Input
+        aria-label={`Текст задачи: ${task.value}`}
         className={style["list-item__input"]}
         value={task.value}
         onChange={(event) => {
@@ -44,9 +47,9 @@ export default function TaskItem({
         disabled={task.done}
       />
       <Button
+        aria-label="Удалить задачу"
         className={style["list-item__delete"]}
         onClick={removeTask}
-        aria-label="Удалить задачу"
       >
         <BsXLg />
       </Button>

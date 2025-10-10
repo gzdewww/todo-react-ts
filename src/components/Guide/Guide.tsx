@@ -32,7 +32,8 @@ const steps: step[] = [
   },
   {
     text: `Списки можно удалять, нажав на крестик.
-    Активную задачу можно редактировать нажатием на ее название`,
+    Активную задачу можно редактировать нажатием на ее название.
+    После выполнения всех задач списка, он помечается выполненным`,
     position: { top: "11rem", left: "2rem" },
     clipPath: {
       clipPath: `polygon(
@@ -127,31 +128,34 @@ export default function Guide({
   };
 
   return (
-    <>
-      <article
-        className={style.guide__bg}
-        style={steps[step].clipPath}
-      ></article>
+    <div className={style.guide}>
+      <div className={style.guide__bg} style={steps[step].clipPath}></div>
 
-      <div className={style.guide__window} style={steps[step].position}>
+      <article className={style.guide__window} style={steps[step].position}>
         <h2 className={style.guide__title}>Обучение</h2>
         <p className={style.guide__text}>{steps[step].text}</p>
         <div className={style.controls}>
-          <Button className={style["controls__skip"]} onClick={endGuide}>
+          <Button
+            aria-label="Пропустить гайд"
+            className={style["controls__skip"]}
+            onClick={endGuide}
+          >
             Пропустить
           </Button>
           <div className={style["controls__steps"]}>
             {steps.map((_, index) => (
-              <div
+              <Button
+                aria-label={`Шаг ${index + 1}`}
                 key={index}
                 className={`${style["controls__step"]} ${
                   index === step ? style["controls__step--active"] : ""
                 }`}
                 onClick={() => setStep(index)}
-              ></div>
+              ></Button>
             ))}
           </div>
           <Button
+            aria-label="Следующий шаг"
             className={style["controls__next"]}
             onClick={() => {
               step === steps.length - 1 ? endGuide() : setStep(step + 1);
@@ -160,7 +164,7 @@ export default function Guide({
             {step === steps.length - 1 ? "Завершить" : "Далее"}
           </Button>
         </div>
-      </div>
-    </>
+      </article>
+    </div>
   );
 }
