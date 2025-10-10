@@ -7,6 +7,7 @@ interface SideBarItemProps {
   value: string;
   active: boolean;
   done: boolean;
+  count: number;
   onRemove: () => void;
   onClick: () => void;
   onChange: (title: string) => void;
@@ -16,6 +17,7 @@ export default function SideBarItem({
   value,
   active,
   done,
+  count,
   onRemove,
   onClick,
   onChange,
@@ -41,6 +43,11 @@ export default function SideBarItem({
         onChange={(event) => onChange(event.target.value)}
         disabled={!active}
       />
+      {count > 0 ? (
+        <div className={style["list-item__count"]}>
+          <span>{count}</span>
+        </div>
+      ) : null}
       <Button
         aria-label={`Удалить список "${value}"`}
         className={style["list-item__delete"]}

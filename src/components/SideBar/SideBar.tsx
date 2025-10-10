@@ -48,6 +48,7 @@ function SideBar({
               done={
                 list.tasks.length > 0 && !list.tasks.some((task) => !task.done)
               }
+              count={list.tasks.filter((task) => !task.done).length}
               onRemove={() => removeList(list.id)}
               onClick={() => {
                 setActiveList(list.id);

@@ -20,7 +20,20 @@
   }
 
   &__icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  &__count{
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    vertical-align: middle;
+    font-weight: bold;
+    background-color: var(--accent-danger);
+    border-radius: 50%;
+    color: var(--bg-main);
   }
 
   &__delete{
