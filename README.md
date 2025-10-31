@@ -6,6 +6,10 @@
 
 Разработано в рамках тестового задания с упором на чистоту архитектуры, отзывчивость интерфейса и современный стек.
 
+##№ Demo
+
+Посмотреть [демо](https://todolisttsreact.netlify.app/)
+
 ### Скриншот приложения
 
 ## ![Preview of the Todo List App](public/screenshot.png)
